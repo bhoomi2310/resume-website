@@ -63,7 +63,7 @@ export default function Hero() {
 
         {/* ✅ Resume Download Button */}
         <a
-          href="/resume.pdf"
+          href="/resumeweb.pdf"
           download
           className="mt-6 inline-block bg-purple-600 hover:bg-pink-500 text-white px-6 py-2 rounded-full shadow-md transition-all duration-300 text-sm sm:text-base font-medium"
         >
