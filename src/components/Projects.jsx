@@ -19,10 +19,10 @@ const projects = [
     link: "https://weathernowwebsite.netlify.app/",
   },
   {
-    name: "Hospital Management System",
-    desc: "Manage patients, appointments, billing with Flask + SQL.",
+    name: "Naksha- Smart India Navigation",
+    desc: "India-specific navigation that understands real road conditions. Get routes that are not just shortest, but also safest, cheapest, greener, and culturally richer.",
     img: hospital,
-    link: "https://hospital-management-system-1-etht.onrender.com/",
+    link: "https://naksha-smart-india-navigation.vercel.app/",
   },
   {
     name: "Tic Tac Toe Game",
@@ -68,3 +68,4 @@ export default function Projects() {
     </section>
   );
 }
+
