@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import naksha from "../assets/naksha.png";
 import financeTracker from "../assets/finance-tracker.png";
 import workmark from "../assets/workmark.png";
+import epsilon from "../assets/epsilon.png";
 import DecryptedText from "./DecryptedText";
 
 const projects = [
@@ -32,6 +33,15 @@ const projects = [
     github: "https://github.com/bhoomi2310/finance-tracker",
     deployed: "https://finance-tracker-i9yb.vercel.app/",
     techStack: ["React", "TypeScript", "Node.js", "Express.js", "SQLite", "TanStack Query", "Tailwind CSS"],
+  },
+  {
+    name: "Epsilon",
+    tagline: "Brand Agency AI",
+    desc: "Ensure brand consistency and stand out from competitors with AI-powered brand intelligence. Epsilon analyzes your designs against your company's brand guidelines, providing real-time compliance scores and intelligent suggestions to align with brand rules—complete with an autofix feature for instant corrections. Compare your brand kit with competitors to identify similarity scores and receive actionable recommendations that help differentiate your brand identity and maintain unique market positioning.",
+    img: epsilon,
+    github: "https://github.com/bhoomi2310/Epsilon",
+    deployed: "https://epsilon-iota.vercel.app/",
+    techStack: ["React", "TypeScript", "Node.js", "Express.js", "Tailwind CSS", "AI/ML"],
   },
 ];
 
