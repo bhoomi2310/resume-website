@@ -5,38 +5,44 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
-  FaFigma,
   FaGitAlt,
   FaGithub,
   FaNodeJs,
+  FaCode,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
-  SiCanva,
   SiExpress,
   SiPython,
+  SiTypescript,
+  SiMongodb,
+  SiCplusplus,
 } from "react-icons/si";
 
 const skills = [
+  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+  { name: "Python", icon: <SiPython className="text-yellow-200" /> },
+  { name: "C++", icon: <SiCplusplus className="text-blue-400" /> },
+  { name: "React", icon: <FaReact className="text-cyan-400" /> },
   { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-  { name: "ReactJS", icon: <FaReact className="text-cyan-400" /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" /> },
-  { name: "Figma", icon: <FaFigma className="text-pink-400" /> },
-  { name: "Canva", icon: <SiCanva className="text-blue-400" /> },
-  { name: "Python", icon: <SiPython className="text-yellow-200" /> },
+  { name: "Node.js", icon: <FaNodeJs className="text-green-400" /> },
+  { name: "Express.js", icon: <SiExpress className="text-gray-200" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  { name: "REST", icon: <FaCode className="text-purple-400" /> },
+  { name: "Data Structures", icon: <FaCode className="text-pink-400" /> },
+  { name: "Algorithms", icon: <FaCode className="text-purple-500" /> },
   { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
   { name: "GitHub", icon: <FaGithub className="text-white" /> },
-  { name: "NodeJS", icon: <FaNodeJs className="text-green-400" /> },
-  { name: "ExpressJS", icon: <SiExpress className="text-gray-200" /> },
 ];
 
 export default function Skills() {
   return (
     <section id="skills" className="py-16 px-4 sm:px-6 bg-black text-white">
       <h2 className="text-4xl sm:text-5xl font-bold text-center text-pink-500 mb-12 transition hover:text-purple-400">
-        Skills();
+        Skills()
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
