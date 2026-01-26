@@ -4,6 +4,7 @@ import intaglios from "../assets/intaglios.png";
 import ieee from "../assets/ieee.png";
 import tedx from "../assets/tedx.png";
 import spacecon from "../assets/spacecon.png";
+import DecryptedText from "./DecryptedText";
 
 const work = [
   {
@@ -89,9 +90,10 @@ const volunteer = [
 export default function Experience() {
   return (
     <section id="experience" className="py-16 px-4 sm:px-6 text-white">
-      <h2 className="text-4xl sm:text-5xl font-bold text-center text-pink-500 mb-12 hover:text-purple-400 transition">
-         Experience()
-      </h2>
+      <DecryptedText
+        text="Experience()"
+        className="text-4xl sm:text-5xl font-bold text-center bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text text-transparent mb-12"
+      />
 
       {/* Work Experience */}
       <h3 className="text-3xl sm:text-4xl font-semibold mb-6 text-center text-violet-300 hover:text-pink-300 transition">
@@ -106,10 +108,10 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.2 }}
-            className="relative bg-gray-900 p-4 sm:p-6 rounded-xl border border-purple-700 w-full max-w-2xl mx-auto shadow-lg group hover:shadow-pink-500 transition"
+            className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-4 sm:p-6 rounded-xl border border-purple-700/50 w-full max-w-2xl mx-auto shadow-lg shadow-purple-700/30 group hover:shadow-pink-500/50 hover:border-pink-500/80 transition-all duration-300 backdrop-blur-sm"
           >
             {/* Chroma glow background */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-700 to-pink-500 opacity-20 blur-md scale-105 group-hover:opacity-40 transition-all duration-500 z-0" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-700/30 to-pink-500/30 opacity-20 blur-md scale-105 group-hover:opacity-40 transition-all duration-500 z-0" />
 
             <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6 z-10">
               <img
@@ -150,10 +152,10 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.2 }}
-            className="relative bg-gray-900 p-4 sm:p-6 rounded-xl border border-purple-700 w-full max-w-2xl mx-auto shadow-lg group hover:shadow-pink-500 transition"
+            className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-4 sm:p-6 rounded-xl border border-purple-700/50 w-full max-w-2xl mx-auto shadow-lg shadow-purple-700/30 group hover:shadow-pink-500/50 hover:border-pink-500/80 transition-all duration-300 backdrop-blur-sm"
           >
             {/* Chroma glow background */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-700 to-pink-500 opacity-20 blur-md scale-105 group-hover:opacity-40 transition-all duration-500 z-0" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-700/30 to-pink-500/30 opacity-20 blur-md scale-105 group-hover:opacity-40 transition-all duration-500 z-0" />
 
             <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6 z-10">
               <img

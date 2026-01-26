@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import naksha from "../assets/naksha.png";
 import financeTracker from "../assets/finance-tracker.png";
 import workmark from "../assets/workmark.png";
+import DecryptedText from "./DecryptedText";
 
 const projects = [
   {
@@ -37,9 +38,10 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-16 px-6 bg-black text-white">
-      <h2 className="text-5xl font-bold text-center text-pink-500 mb-12 hover:text-purple-400 transition">
-         Projects()
-      </h2>
+      <DecryptedText
+        text="Projects()"
+        className="text-5xl font-bold text-center bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text text-transparent mb-12"
+      />
 
       <div className="flex flex-col items-center gap-10">
         {projects.map((proj, i) => (
@@ -49,7 +51,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
-            className="w-full md:w-[700px] bg-gray-900 border border-purple-700 shadow-lg shadow-purple-700 hover:shadow-pink-500 transition rounded-xl overflow-hidden group relative"
+            className="w-full md:w-[700px] bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-700/50 shadow-lg shadow-purple-700/50 hover:shadow-pink-500/50 hover:border-pink-500/80 transition-all duration-300 rounded-xl overflow-hidden group relative backdrop-blur-sm"
           >
             <div className="relative">
               <img src={proj.img} alt={proj.name} className="w-full h-60 object-cover" />

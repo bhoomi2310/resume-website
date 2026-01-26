@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import nsut from "../assets/nsut.jpg";
 import amityPushp from "../assets/amity_pushp.jpg";
 import amityGurgaon from "../assets/amity_gurgaon.jpg";
+import DecryptedText from "./DecryptedText";
 
 export default function Background() {
   const [certIndex, setCertIndex] = useState(0);
@@ -83,9 +84,10 @@ export default function Background() {
   return (
     <section id="background" className="py-16 px-4 sm:px-6 text-white relative overflow-hidden">
       {/* Heading */}
-      <h2 className="text-4xl sm:text-5xl font-bold text-center text-pink-500 mb-12 hover:text-purple-400 transition">
-        Background()
-      </h2>
+      <DecryptedText
+        text="Background()"
+        className="text-4xl sm:text-5xl font-bold text-center bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text text-transparent mb-12"
+      />
 
       {/* Education */}
       <h3 className="text-3xl sm:text-4xl font-semibold mb-6 text-center text-violet-300 hover:text-pink-300 transition">
