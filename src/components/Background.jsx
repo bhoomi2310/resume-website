@@ -182,7 +182,7 @@ export default function Background() {
             className="relative w-[90%] sm:w-[550px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-2 border-purple-500 rounded-xl p-8 shadow-[0_20px_60px_-15px_rgba(168,85,247,0.6),0_10px_30px_-10px_rgba(236,72,153,0.5)] cursor-pointer z-10 hover:border-pink-500 hover:shadow-[0_25px_70px_-15px_rgba(168,85,247,0.7),0_15px_40px_-10px_rgba(236,72,153,0.6)] transition-all duration-300"
           >
             {/* Animated gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/10 to-violet-600/10 rounded-xl animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/10 to-violet-600/10 rounded-xl md:animate-pulse"></div>
             
             {/* Transparent logo background with better styling */}
             {certifications[certIndex].logo && (

@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import profileImg from "../assets/profile.jpg";
 import DarkVeil from "./DarkVeil";
@@ -7,6 +7,16 @@ import SplitText from "./SplitText";
 
 export default function Hero() {
   const [clicked, setClicked] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section
@@ -19,11 +29,11 @@ export default function Hero() {
       {/* Profile Image with Glow and Background Ring */}
       <motion.div
         className="relative z-10 flex items-center justify-center"
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={isMobile ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }}
       >
-        <div className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 opacity-60 -right-2 top-2 blur-2xl animate-pulse"></div>
+        <div className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 opacity-60 -right-2 top-2 blur-2xl md:animate-pulse"></div>
         <motion.img
           src={profileImg}
           alt="Profile"
@@ -31,17 +41,18 @@ export default function Hero() {
           className={`relative z-10 rounded-full w-52 h-52 sm:w-60 sm:h-60 border-4 border-pink-500 cursor-pointer transition-all duration-500 ${
             clicked ? "shadow-[0_0_40px_10px_rgba(192,132,252,0.8)]" : ""
           } hover:shadow-[0_0_25px_5px_rgba(168,85,247,0.6)]`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={isMobile ? {} : { scale: 1.05 }}
+          whileTap={isMobile ? {} : { scale: 0.95 }}
+          style={{ willChange: isMobile ? "auto" : "transform" }}
         />
       </motion.div>
 
       {/* Text and Resume Button */}
       <motion.div
         className="z-10 max-w-xl text-center md:text-left px-2"
-        initial={{ opacity: 0, x: -50 }}
+        initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.3 }}
       >
         <SplitText
           text="Hey! I'm Bhoomi"
