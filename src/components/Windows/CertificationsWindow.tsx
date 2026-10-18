@@ -26,13 +26,10 @@ export const CertificationsWindow: React.FC = () => {
             className="p-5 rounded-2xl bg-white/85 dark:bg-slate-900/85 border border-slate-200/90 dark:border-slate-800 shadow-xs hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700 transition-all space-y-3 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-start justify-between gap-2 mb-1.5">
+              <div className="mb-1.5">
                 <h3 className="font-display font-bold text-base text-slate-900 dark:text-slate-100">
                   {item.title}
                 </h3>
-                <span className="px-2.5 py-0.5 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
-                  {item.badge}
-                </span>
               </div>
 
               <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 mb-2">
