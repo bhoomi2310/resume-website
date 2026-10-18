@@ -86,6 +86,7 @@ export const DesktopIcons: React.FC<DesktopIconsProps> = ({ onOpenApp }) => {
 
   const handleIconClick = (id: WindowId) => {
     setSelectedId(id);
+    onOpenApp(id);
   };
 
   const handleDoubleClick = (id: WindowId) => {
