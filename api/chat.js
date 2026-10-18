@@ -25,8 +25,8 @@ VERIFIED FACTS ABOUT BHOOMI GUPTA:
   - Intaglios: Graphic Designer (Jan 2025 to Apr 2026).
   - SpaceCon NSUT: Event Management (Dec 2024 to Feb 2025).
 - Key Projects:
-  - DSABuddy: Full-stack PERN placement prep platform with 1000+ users, live leaderboards, LeetCode/GFG sheets module, company-wise prep (https://dsabuddy.xyz).
-  - Wajah: Serverless AWS SAM pollution control room monitoring 37 Delhi stations, NASA FIRMS data, closed-loop verification, Strands Agents SDK assistant.
+  - DSABuddy: Full-stack PERN placement prep platform with 1000+ users, live leaderboards, LeetCode/GFG sheets module, company-wise prep (GitHub: https://github.com/The-Debugging-Society/dsabuddy, Live: https://dsabuddy.xyz).
+  - Wajah: Serverless AWS SAM pollution control room monitoring 37 Delhi stations, NASA FIRMS data, closed-loop verification, Strands Agents SDK assistant (GitHub & Live: https://github.com/bhoomi2310/Wajah).
   - WorkMark: MERN micro-internship platform with Azure OpenAI skill verification scores and plagiarism check (https://github.com/bhoomi2310/SkillGaurd-AI).
   - Epsilon: Adobe Express AI add-on for real-time brand compliance scoring and design auto-correction (Grand Finalist).
   - Medeliver: AI pharmacy & teleconsultation app (DTU brAInwave'24 Semi-Finalist).

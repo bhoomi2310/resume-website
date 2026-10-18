@@ -40,11 +40,12 @@ PROJECTS:
 1. DSABuddy (Placement Preparation Platform):
    - Full-stack PERN platform serving 1000+ college users with live leaderboards, company-wise interview prep, interview forums and DSA progress tracking.
    - Sheets module scrapes and structures LeetCode and GFG links; Company Mines, onboarding flows, Multer + Cloudinary media pipeline, Tailwind CSS and shadcn/ui.
-   - Live: https://dsabuddy.xyz
+   - GitHub: https://github.com/The-Debugging-Society/dsabuddy, Live: https://dsabuddy.xyz
 2. Wajah (Pollution Control Room with Closed-Loop Verification):
    - Serverless AWS SAM platform monitoring 37 Delhi stations hourly with EventBridge and Lambda, diagnosing spike causes using sensor and NASA FIRMS data.
    - Runs each work order through Step Functions, SNS, DynamoDB and S3 to verify the fix with sensor data 3 hours later.
    - Hindi/English AI assistant built with Strands Agents SDK (9 data tools, Bedrock-ready); verification method stress-tested, with a published false-success rate of 1 in 5.
+   - GitHub: https://github.com/bhoomi2310/Wajah, Live: https://github.com/bhoomi2310/Wajah
 3. WorkMark (AI-Powered Micro-Internship & Skill Verification Platform):
    - MERN platform where companies post micro-tasks and students submit work.
    - JWT role access, bcryptjs auth, MongoDB; Azure OpenAI (GPT-4) generates skill-verification scores, per-skill breakdowns, resume bullets and plagiarism risk.

@@ -19,7 +19,7 @@ export const projectsData: ProjectItem[] = [
     tagline: "Placement Preparation & DSA Tracking Platform",
     description: "Built a full-stack PERN platform serving 1000+ college users with live leaderboards, company-wise interview prep, interview forums and DSA progress tracking. Developed the Sheets module by scraping and structuring LeetCode + GFG links; engineered Company Mines, onboarding flows, and a Multer + Cloudinary media pipeline using Tailwind CSS and shadcn/ui.",
     techStack: ["PostgreSQL", "Express.js", "React.js", "Node.js", "Tailwind CSS", "shadcn/ui", "Cloudinary"],
-    githubUrl: "https://github.com/bhoomi2310",
+    githubUrl: "https://github.com/The-Debugging-Society/dsabuddy",
     liveUrl: "https://dsabuddy.xyz",
     highlight: true,
     folderCategory: "Web Platforms"
@@ -31,8 +31,8 @@ export const projectsData: ProjectItem[] = [
     tagline: "Pollution Control Room with Closed-Loop Verification",
     description: "Built a serverless AWS platform (SAM) that monitors 37 Delhi stations hourly with EventBridge + Lambda, diagnoses spike causes using sensor and NASA FIRMS data, and runs each work order through Step Functions, SNS, DynamoDB and S3 to verify the fix with sensor data 3 hours later. Built a Hindi/English AI assistant with the Strands Agents SDK (9 data tools, Bedrock-ready); stress-tested the verification method and published its false-success rate of 1 in 5.",
     techStack: ["AWS SAM", "Lambda", "EventBridge", "Step Functions", "DynamoDB", "S3", "Strands Agents SDK", "Bedrock"],
-    githubUrl: "https://github.com/bhoomi2310",
-    liveUrl: "https://github.com/bhoomi2310",
+    githubUrl: "https://github.com/bhoomi2310/Wajah",
+    liveUrl: "https://github.com/bhoomi2310/Wajah",
     highlight: true,
     folderCategory: "Cloud & AI"
   },
