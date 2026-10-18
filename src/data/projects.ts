@@ -78,7 +78,7 @@ export const projectsData: ProjectItem[] = [
     description: "Smart navigation platform tailored specifically for Indian road conditions. Accounts for real-time road quality, traffic congestion, and safer transit options with ML-driven route predictions.",
     techStack: ["React", "TypeScript", "Node.js", "OpenRouteService", "Tailwind CSS"],
     githubUrl: "https://github.com/bhoomi2310/Naksha-Smart-India-Navigation",
-    liveUrl: "https://naksha-smart-india-navigation.vercel.app/",
+    liveUrl: "https://main.d1eobkifvxbx7f.amplifyapp.com/",
     highlight: false,
     folderCategory: "Web Platforms"
   },

@@ -30,7 +30,7 @@ VERIFIED FACTS ABOUT BHOOMI GUPTA:
   - WorkMark: MERN micro-internship platform with Azure OpenAI skill verification scores and plagiarism check (https://github.com/bhoomi2310/SkillGaurd-AI).
   - Epsilon: Adobe Express AI add-on for real-time brand compliance scoring and design auto-correction (Grand Finalist).
   - Medeliver: AI pharmacy & teleconsultation app (DTU brAInwave'24 Semi-Finalist).
-  - Naksha: Smart navigation platform for Indian roads.
+  - Naksha: Smart navigation platform for Indian roads (Live: https://main.d1eobkifvxbx7f.amplifyapp.com/).
   - Finance Tracker: Personal financial tracking and analytics platform.
 - Technical Skills:
   - Languages: C, C++, JavaScript, TypeScript, Python

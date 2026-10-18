@@ -59,7 +59,7 @@ PROJECTS:
    - DTU brAInwave'24 Semi-Finalist.
 6. Naksha:
    - Smart navigation platform for Indian roads taking road quality, traffic, and safety into account.
-   - GitHub: https://github.com/bhoomi2310/Naksha-Smart-India-Navigation
+   - GitHub: https://github.com/bhoomi2310/Naksha-Smart-India-Navigation, Live: https://main.d1eobkifvxbx7f.amplifyapp.com/
 7. Finance Tracker:
    - Expense tracking and financial visualization platform with real-time analytics.
    - GitHub: https://github.com/bhoomi2310/finance-tracker
