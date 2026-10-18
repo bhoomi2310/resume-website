@@ -2,92 +2,187 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enable smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Set base styles to ensure full-viewport consistency */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  background-color: #000000;
-  color: white;
-  overflow-x: hidden;
-}
-
-/* Hide default cursor only on desktop */
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
+@layer base {
+  :root {
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-subtle: rgba(226, 232, 240, 0.8);
   }
-}
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
+  .dark {
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --border-subtle: rgba(51, 65, 85, 0.6);
+  }
 
-::-webkit-scrollbar-track {
-  background: #000000;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a855f7, #ec4899);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #ec4899, #a855f7);
-}
-
-/* Performance optimizations for mobile */
-@media (max-width: 768px) {
   * {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    perspective: 1000;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
-  
-  /* Disable animations on mobile for better performance */
-  @media (prefers-reduced-motion: no-preference) {
-    .animate-pulse {
-      animation: none !important;
-    }
+
+  body {
+    user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Clean subtle scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.35);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.65);
   }
 }
 
-/* Custom utility for background grid */
-.bg-line-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(40px, 1fr));
-  background-color: transparent;
+/* Glassmorphism system */
+.mac-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 }
 
-.bg-line-grid::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-      to right,
-      rgba(128, 90, 213, 0.2) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(128, 90, 213, 0.2) 1px,
-      transparent 1px
-    );
-  background-size: 40px 40px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 0;
+.dark .mac-glass {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
+
+.mac-dock-glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.dark .mac-dock-glass {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px -6px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.mac-menu-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.dark .mac-menu-glass {
+  background: rgba(11, 15, 25, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Official macOS Dynamic Wallpapers (4K Ultra-HD) */
+.wallpaper-light {
+  background-color: #E27BBA;
+  background-image: url('/wallpaper-light.jpg?v=4');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.wallpaper-dark {
+  background-color: #1A1344;
+  background-image: url('/wallpaper-dark.jpg?v=4');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Authentic macOS Traffic Lights */
+.traffic-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.traffic-btn:hover {
+  transform: scale(1.08);
+}
+
+.traffic-btn-close {
+  background: #FF5F56;
+  border: 1px solid #E0443E;
+}
+
+.traffic-btn-minimize {
+  background: #FFBD2E;
+  border: 1px solid #DEA123;
+}
+
+.traffic-btn-maximize {
+  background: #27C93F;
+  border: 1px solid #1AAB29;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Music Box Custom Purple Slider */
+.music-slider {
+  accent-color: #9B6DFF;
+}
+
+.music-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #9B6DFF;
+  border: 2px solid #5B2EA6;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(91, 46, 166, 0.45);
+  transition: transform 0.1s ease;
+}
+
+.music-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.music-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #9B6DFF;
+  border: 2px solid #5B2EA6;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(91, 46, 166, 0.45);
+}
+

@@ -2,32 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
     <title>Bhoomi Gupta | Portfolio</title>
     
-    <!-- 🔍 SEO Meta Tags -->
-    <meta name="description" content="Bhoomi Gupta - Portfolio Resume | Projects, Experience, Skills" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bhoomi Gupta - B.Tech @ NSUT | Full-stack & Agentic AI builder. Interactive macOS desktop portfolio." />
     <meta name="author" content="Bhoomi Gupta" />
+    <meta name="keywords" content="Bhoomi Gupta, Portfolio, NSUT, Agentic AI, Full-stack, SDE, React, Genpact, RITES, DSABuddy, Wajah" />
 
-    <!-- 📱 Mobile Web App Capable -->
+    <!-- Mobile Web App Capable -->
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#F8FAFC" />
 
-    <!-- 📸 Social Sharing (Open Graph) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Bhoomi Gupta | Portfolio" />
-    <meta property="og:description" content="Explore Bhoomi's projects, experience, and skills." />
+    <meta property="og:description" content="B.Tech @ NSUT | Full-stack + Agentic AI builder. Explore my projects, experience, skills and apps in a macOS desktop experience." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/your-thumbnail.png" />
-    <meta property="og:url" content="https://your-portfolio-link.com" />
+    <meta property="og:image" content="/profile.jpg" />
+    <meta property="og:url" content="https://bhoomi-gupta.vercel.app" />
 
-    <!-- 🖼 Favicon -->
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bhoomi Gupta | Portfolio" />
+    <meta name="twitter:description" content="B.Tech @ NSUT | Full-stack + Agentic AI builder." />
+    <meta name="twitter:image" content="/profile.jpg" />
+
+    <!-- Google Fonts: Inter (Sans) + Outfit (Display) + Newsreader & Playfair Display (Editorial Italic Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (macOS Desktop icon) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
   </head>
 
-  <body class="bg-black text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans antialiased select-none overflow-hidden h-screen w-screen">
+    <div id="root" class="h-full w-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

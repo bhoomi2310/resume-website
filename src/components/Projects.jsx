@@ -10,7 +10,7 @@ const projects = [
   {
     name: "WorkMark - Verified by work, not words",
     tagline: "AI-Powered Micro-Internship Platform",
-    desc: "Transform how skills are verified in the modern workforce. WorkMark bridges the gap between education and industry by enabling students to prove their capabilities through real work, evaluated by cutting-edge AI. Companies get verified talent, students get recognized skills, and recruiters get powerful search tools—all in one intelligent platform.",
+    desc: "Transform how skills are verified in the modern workforce. WorkMark bridges the gap between education and industry by enabling students to prove their capabilities through real work, evaluated by cutting-edge AI. Companies get verified talent, students get recognized skills, and recruiters get powerful search tools: all in one intelligent platform.",
     img: workmark,
     github: "https://github.com/bhoomi2310/SkillGaurd-AI",
     deployed: "",
@@ -19,7 +19,7 @@ const projects = [
   {
     name: "Naksha",
     tagline: "Navigate India smarter, safer",
-    desc: "Navigate India like never before. Naksha understands the unique challenges of Indian roads—from traffic patterns to road quality—and provides routes that are not just shortest, but also safest, cheapest, and culturally richer. ML-powered predictions ensure you always get the best route for your journey.",
+    desc: "Navigate India like never before. Naksha understands the unique challenges of Indian roads: from traffic patterns to road quality, and provides routes that are not just shortest, but also safest, cheapest, and culturally richer. ML-powered predictions ensure you always get the best route for your journey.",
     img: naksha,
     github: "https://github.com/bhoomi2310/Naksha-Smart-India-Navigation",
     deployed: "https://naksha-smart-india-navigation.vercel.app/",
@@ -37,7 +37,7 @@ const projects = [
   {
     name: "Epsilon",
     tagline: "Brand Agency AI",
-    desc: "Ensure brand consistency and stand out from competitors with AI-powered brand intelligence. Epsilon analyzes your designs against your company's brand guidelines, providing real-time compliance scores and intelligent suggestions to align with brand rules—complete with an autofix feature for instant corrections. Compare your brand kit with competitors to identify similarity scores and receive actionable recommendations that help differentiate your brand identity and maintain unique market positioning.",
+    desc: "Ensure brand consistency and stand out from competitors with AI-powered brand intelligence. Epsilon analyzes your designs against your company's brand guidelines, providing real-time compliance scores and intelligent suggestions to align with brand rules, complete with an autofix feature for instant corrections. Compare your brand kit with competitors to identify similarity scores and receive actionable recommendations that help differentiate your brand identity and maintain unique market positioning.",
     img: epsilon,
     github: "https://github.com/bhoomi2310/Epsilon",
     deployed: "https://epsilon-iota.vercel.app/",
