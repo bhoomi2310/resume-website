@@ -45,7 +45,7 @@ PROJECTS:
    - Serverless AWS SAM platform monitoring 37 Delhi stations hourly with EventBridge and Lambda, diagnosing spike causes using sensor and NASA FIRMS data.
    - Runs each work order through Step Functions, SNS, DynamoDB and S3 to verify the fix with sensor data 3 hours later.
    - Hindi/English AI assistant built with Strands Agents SDK (9 data tools, Bedrock-ready); verification method stress-tested, with a published false-success rate of 1 in 5.
-   - GitHub: https://github.com/bhoomi2310/Wajah, Live: https://github.com/bhoomi2310/Wajah
+   - GitHub: https://github.com/bhoomi2310/Wajah, Live: https://main.d1eobkifvxbx7f.amplifyapp.com/
 3. WorkMark (AI-Powered Micro-Internship & Skill Verification Platform):
    - MERN platform where companies post micro-tasks and students submit work.
    - JWT role access, bcryptjs auth, MongoDB; Azure OpenAI (GPT-4) generates skill-verification scores, per-skill breakdowns, resume bullets and plagiarism risk.

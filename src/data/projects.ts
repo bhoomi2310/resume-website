@@ -32,7 +32,7 @@ export const projectsData: ProjectItem[] = [
     description: "Built a serverless AWS platform (SAM) that monitors 37 Delhi stations hourly with EventBridge + Lambda, diagnoses spike causes using sensor and NASA FIRMS data, and runs each work order through Step Functions, SNS, DynamoDB and S3 to verify the fix with sensor data 3 hours later. Built a Hindi/English AI assistant with the Strands Agents SDK (9 data tools, Bedrock-ready); stress-tested the verification method and published its false-success rate of 1 in 5.",
     techStack: ["AWS SAM", "Lambda", "EventBridge", "Step Functions", "DynamoDB", "S3", "Strands Agents SDK", "Bedrock"],
     githubUrl: "https://github.com/bhoomi2310/Wajah",
-    liveUrl: "https://github.com/bhoomi2310/Wajah",
+    liveUrl: "https://main.d1eobkifvxbx7f.amplifyapp.com/",
     highlight: true,
     folderCategory: "Cloud & AI"
   },
