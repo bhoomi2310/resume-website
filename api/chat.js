@@ -116,9 +116,8 @@ module.exports = async (req, res) => {
       console.warn('Groq response not ok, checking fallback...');
     }
 
-    // 2. Google Gemini (Free tier via Google AI Studio)
+    // 2. Google Gemini (Google AI Studio)
     if (geminiKey) {
-      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`;
       const contents = [
         ...(Array.isArray(history)
           ? history.slice(-6).map((h) => ({
@@ -129,29 +128,42 @@ module.exports = async (req, res) => {
         { role: 'user', parts: [{ text: message }] },
       ];
 
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: {
-            parts: [{ text: KNOWLEDGE_PROMPT }],
-          },
-          contents,
-          generationConfig: {
-            temperature: 0.3,
-            maxOutputTokens: 300,
-          },
-        }),
-      });
+      const modelsToTry = [
+        'gemini-3.8-flash',
+        'gemini-flash-latest',
+        'gemini-2.5-flash',
+        'gemini-1.5-flash',
+      ];
 
-      if (response.ok) {
-        const data = await response.json();
-        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (reply) {
-          return res.status(200).json({ reply: reply.trim(), provider: 'gemini' });
+      for (const modelName of modelsToTry) {
+        try {
+          const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${geminiKey}`;
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              system_instruction: {
+                parts: [{ text: KNOWLEDGE_PROMPT }],
+              },
+              contents,
+              generationConfig: {
+                temperature: 0.3,
+                maxOutputTokens: 1024,
+              },
+            }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (reply) {
+              return res.status(200).json({ reply: reply.trim(), provider: 'gemini' });
+            }
+          }
+        } catch (mErr) {
+          console.warn(`Model ${modelName} call failed, trying next...`, mErr);
         }
       }
-      console.warn('Gemini response not ok, checking fallback...');
     }
 
     // 3. DeepSeek (DeepSeek V3)

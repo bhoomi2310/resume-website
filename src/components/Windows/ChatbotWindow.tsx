@@ -39,44 +39,91 @@ export const ChatbotWindow: React.FC = () => {
 
   // Intelligent local keyword fallback matching verified resume facts
   const getLocalAnswer = (query: string): string => {
-    const q = query.toLowerCase();
+    const q = query.toLowerCase().trim();
 
-    if (q.includes('genpact') || q.includes('intern') || q.includes('experience') || q.includes('work')) {
+    // 1. Who is Bhoomi / About / Bio / Summary / Introduce
+    if (
+      q.includes('who is') ||
+      q.includes('who are you') ||
+      q.includes('about bhoomi') ||
+      q.includes('about yourself') ||
+      q.includes('introduce') ||
+      q.includes('tell me about bhoomi') ||
+      q.includes('tell me about her') ||
+      q.includes('bio') ||
+      q.includes('summary') ||
+      q.includes('overview') ||
+      q === 'bhoomi' ||
+      q === 'who' ||
+      q === 'about'
+    ) {
+      return "Hey, I'm Bhoomi! I write code that ships, not code that just compiles. I'm a 3rd-year B.Tech undergrad at NSUT Delhi, with experience building autonomous Agentic AI systems at Genpact and full-stack software at RITES. I build things 1,000+ students actually use (like DSABuddy), and I debug like it's personal. Looking for developer roles where the bar is high and the bugs are scared!";
+    }
+
+    // 2. Greetings
+    if (q === 'hi' || q === 'hello' || q === 'hey' || q.startsWith('hi ') || q.startsWith('hello ') || q.startsWith('hey ') || q.includes('good morning') || q.includes('good evening')) {
+      return "Hey there! Great to meet you. Ask me anything about Bhoomi's projects (like DSABuddy or Wajah), her Agentic AI internship at Genpact, tech stack, or education at NSUT!";
+    }
+
+    // 3. Why hire / strengths / why Bhoomi
+    if (q.includes('why hire') || q.includes('strengths') || q.includes('why should') || q.includes('stand out') || q.includes('best qualities')) {
+      return "Bhoomi is a builder who ships production software: full-stack fluency (React on the front, Node & Python on the back, SQL underneath), real-world Agentic AI experience at Genpact, and a track record of building tools that 1,000+ students actually use daily.";
+    }
+
+    // 4. Agentic AI / AI experience
+    if (q.includes('agentic') || (q.includes('ai') && (q.includes('experience') || q.includes('work') || q.includes('build')))) {
+      return "Bhoomi specialized in Agentic AI as an intern at Genpact (Gurugram). She developed a multi-agent Balance Sheet Reconciliation System and contributed to a production-grade Agentic Failure Monitoring & Auto-Triage System using Azure OpenAI, ArcadeDB OKG, SQL Server, and Knowledge Graphs.";
+    }
+
+    // 5. Work experience / Internships
+    if (q.includes('genpact') || q.includes('intern') || q.includes('experience') || q.includes('work') || q.includes('job')) {
       if (q.includes('rites')) {
         return "At RITES Ltd. (May 2026 to Jul 2026), Bhoomi built a full-stack Executive Health Checkup system using React.js, Node.js, and SQL Server with SAP integration and production-grade REST APIs.";
       }
-      return "Bhoomi interned at Genpact as an Agentic AI Intern (Jun 2026 to Aug 2026) in Gurugram. She developed a multi-agent Balance Sheet Reconciliation System and contributed to a production-grade Agentic Failure Monitoring & Auto-Triage System using Azure OpenAI GPT-5.5, ArcadeDB Knowledge Graphs, and SQL Server.";
+      return "Bhoomi interned at Genpact as an Agentic AI Intern (Jun 2026 to Aug 2026) in Gurugram, building multi-agent systems with Azure OpenAI, ArcadeDB, and Python. She also interned at RITES Ltd. (May to Jul 2026) building full-stack enterprise health checkup software.";
     }
 
-    if (q.includes('project') || q.includes('built') || q.includes('apps') || q.includes('dsabuddy') || q.includes('wajah') || q.includes('workmark')) {
-      return "Bhoomi has built several notable platforms: DSABuddy (PERN placement prep platform serving 1000+ users), Wajah (serverless AWS SAM pollution control room with closed-loop verification and AI assistant), WorkMark (MERN micro-internship platform with Azure OpenAI scoring), and Epsilon (Adobe Express AI compliance tool, Grand Finalist).";
+    // 6. Projects
+    if (q.includes('project') || q.includes('built') || q.includes('apps') || q.includes('dsabuddy') || q.includes('wajah') || q.includes('workmark') || q.includes('epsilon')) {
+      return "Bhoomi has built several notable platforms: DSABuddy (PERN placement prep platform serving 1,000+ active users at dsabuddy.xyz), Wajah (serverless AWS SAM pollution control room with Strands AI assistant), WorkMark (MERN micro-internship platform with Azure OpenAI verification), and Epsilon (Adobe Express AI compliance tool, Grand Finalist).";
     }
 
-    if (q.includes('skill') || q.includes('stack') || q.includes('language') || q.includes('tech') || q.includes('react') || q.includes('python')) {
+    // 7. Technical Skills & Stack
+    if (q.includes('skill') || q.includes('stack') || q.includes('language') || q.includes('tech') || q.includes('react') || q.includes('python') || q.includes('coding')) {
       return "Her core technical skills include Languages (C, C++, JavaScript, TypeScript, Python), Frontend (React.js, Tailwind CSS, shadcn/ui), Backend (Node.js, Express.js, REST APIs, JWT), Databases (MongoDB, PostgreSQL, MySQL, SQL Server, ArcadeDB), and Tools/Cloud/AI (AWS, Azure OpenAI, Git, Linux, Postman).";
     }
 
-    if (q.includes('education') || q.includes('college') || q.includes('nsut') || q.includes('school') || q.includes('study')) {
-      return "Bhoomi is a third-year undergraduate pursuing B.Tech in Instrumentation and Control Engineering at Netaji Subhas University of Technology (NSUT), Delhi (2024 to 2028). She completed Class XII at Amity International School Pushp Vihar (94.4%) and Class X at Amity Sec 46 Gurugram (99.4%).";
+    // 8. Education & College
+    if (q.includes('education') || q.includes('college') || q.includes('nsut') || q.includes('school') || q.includes('study') || q.includes('degree') || q.includes('branch')) {
+      return "Bhoomi is a third-year undergraduate pursuing B.Tech in Instrumentation and Control Engineering (ICE) at Netaji Subhas University of Technology (NSUT), Delhi (2024 to 2028). She finished high school at Amity International School Pushp Vihar with 94.4%.";
     }
 
-    if (q.includes('achievement') || q.includes('award') || q.includes('hackathon') || q.includes('rank')) {
+    // 9. Achievements & Hackathons
+    if (q.includes('achievement') || q.includes('award') || q.includes('hackathon') || q.includes('rank') || q.includes('win') || q.includes('contest')) {
       return "Her key achievements include Grand Finalist in Adobe Express Add-ons Hackathon (Epsilon), Semi-Finalist in DTU brAInwave'24 (Medeliver), Top 75 Coders in Amazon Hack On 2026, and Semi-Finalist in Flipkart GRID 8.0.";
     }
 
-    if (q.includes('role') || q.includes('target') || q.includes('analyst') || q.includes('sde') || q.includes('hiring') || q.includes('looking for')) {
-      return "Bhoomi is open to Software Development Engineer (SDE), Data Analyst, and Cloud / AI roles. She brings hands-on experience in full-stack architecture, data analytics, SQL/NoSQL databases, and autonomous AI agents.";
+    // 10. Target Roles & Hiring
+    if (q.includes('role') || q.includes('target') || q.includes('analyst') || q.includes('sde') || q.includes('hiring') || q.includes('looking for') || q.includes('open to')) {
+      return "Bhoomi is targeting Software Development Engineer (SDE), Full-stack Developer, Data Analyst, and Cloud / AI engineering roles where she can build high-impact production systems.";
     }
 
-    if (q.includes('contact') || q.includes('email') || q.includes('reach') || q.includes('hire')) {
-      return "You can reach Bhoomi via email at imbhoomigupta@gmail.com, or connect on LinkedIn (linkedin.com/in/bhoomi23) and GitHub (github.com/bhoomi2310).";
+    // 11. Contact & Socials
+    if (q.includes('contact') || q.includes('email') || q.includes('reach') || q.includes('linkedin') || q.includes('github') || q.includes('message')) {
+      return "You can reach Bhoomi directly via email at imbhoomigupta@gmail.com, or connect on LinkedIn (linkedin.com/in/bhoomi23) and GitHub (github.com/bhoomi2310). You can also send a message via the Mail app right on this desktop!";
     }
 
-    if (q.includes('leadership') || q.includes('debugging') || q.includes('ieee') || q.includes('tedx')) {
-      return "Bhoomi serves as Joint General Secretary at The Debugging Society NSUT, Joint Secretary at IEEE NSUT, and Core Member at TEDxNSUT, leading technical project teams and organizing flagship hackathons.";
+    // 12. Leadership & Extracurriculars
+    if (q.includes('leadership') || q.includes('debugging') || q.includes('ieee') || q.includes('tedx') || q.includes('society') || q.includes('club')) {
+      return "Bhoomi serves as Joint General Secretary at The Debugging Society NSUT, Joint Secretary at IEEE NSUT, and Core Member at TEDxNSUT, leading tech teams, mentoring junior coders, and organizing flagship hackathons.";
     }
 
-    return "I don't have that info, you can email Bhoomi directly at imbhoomigupta@gmail.com.";
+    // 13. Music & Fun
+    if (q.includes('music') || q.includes('song') || q.includes('taylor') || q.includes('hobby') || q.includes('fun')) {
+      return "Bhoomi loves Taylor Swift! Check out the Music Box app right on this desktop to listen to 'Lavender Haze' with an interactive vinyl turntable!";
+    }
+
+    return "Bhoomi is a full-stack & Agentic AI developer at NSUT Delhi (ICE, 2024-2028), former intern at Genpact & RITES, and builder of DSABuddy (1000+ users). For specific inquiries, feel free to email her directly at imbhoomigupta@gmail.com!";
   };
 
   const handleSendMessage = async (textToSend?: string) => {
