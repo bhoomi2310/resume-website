@@ -10,6 +10,7 @@ import { profileData } from '../../data/profile';
 import { WindowId } from '../../types';
 import {
   MacFinderIcon,
+  MacSafariIcon,
   MacProjectsIcon,
   MacBriefcaseIcon,
   MacTerminalIcon,
@@ -103,7 +104,7 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
     {
       id: 'projects',
       label: 'Projects',
-      icon: MacProjectsIcon,
+      icon: MacSafariIcon,
       badge: '7',
     },
     {
@@ -280,7 +281,7 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
             className="w-11 h-11 sm:w-12 sm:h-12 active:scale-90 transition-transform drop-shadow-md relative"
             aria-label="Projects"
           >
-            <MacProjectsIcon className="w-full h-full" />
+            <MacSafariIcon className="w-full h-full" />
             <span className="absolute -top-1 -right-1 px-1.5 py-0.2 bg-red-500 text-white text-[8px] font-bold rounded-full border border-white z-10 shadow-xs">
               7
             </span>

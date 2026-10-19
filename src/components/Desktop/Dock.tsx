@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { WindowId } from '../../types';
 import {
   MacFinderIcon,
+  MacSafariIcon,
   MacProjectsIcon,
   MacBriefcaseIcon,
   MacTerminalIcon,
@@ -55,7 +56,7 @@ const dockItems: DockItemConfig[] = [
   {
     id: 'projects',
     label: 'Projects',
-    icon: MacProjectsIcon,
+    icon: MacSafariIcon,
   },
   {
     id: 'experience',

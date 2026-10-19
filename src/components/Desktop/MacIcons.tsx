@@ -40,29 +40,36 @@ export const MacFinderIcon: React.FC<{ className?: string }> = ({ className = 'w
     <div className={`relative ${className}`}>
       <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible" fill="none">
         <defs>
-          <linearGradient id="finderLeft" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#55BAFF" />
-            <stop offset="1" stopColor="#1E86FE" />
+          <linearGradient id="finderLeftGrad" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#62C6FE" />
+            <stop offset="0.6" stopColor="#38A5FE" />
+            <stop offset="1" stopColor="#1C8CFE" />
           </linearGradient>
-          <linearGradient id="finderRight" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#156EE5" />
-            <stop offset="1" stopColor="#0545BE" />
+          <linearGradient id="finderRightGrad" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#1B71EB" />
+            <stop offset="0.5" stopColor="#125ECE" />
+            <stop offset="1" stopColor="#0346BF" />
           </linearGradient>
           <clipPath id="finderSquircle">
             <rect width="100" height="100" rx="22.5" />
           </clipPath>
         </defs>
 
-        {/* Squircle base with two-tone face fill */}
         <g clipPath="url(#finderSquircle)">
-          {/* Left half: bright sky blue */}
-          <rect x="0" y="0" width="50" height="100" fill="url(#finderLeft)" />
-          {/* Right half: rich royal blue */}
-          <rect x="50" y="0" width="50" height="100" fill="url(#finderRight)" />
-
-          {/* Center Dividing Nose Line */}
+          {/* Left half: Bright cyan-blue face following authentic nose profile */}
           <path
-            d="M 50 0 L 50 56 C 50 60.5 45.5 63.5 38 64"
+            d="M 0 0 L 50 0 L 50 46 C 45 47 34 50 34 56 C 34 61.5 45 63 48 64 L 50 100 L 0 100 Z"
+            fill="url(#finderLeftGrad)"
+          />
+          {/* Right half: Royal cobalt-blue face hugging nose profile */}
+          <path
+            d="M 50 0 L 100 0 L 100 100 L 50 100 L 48 64 C 45 63 34 61.5 34 56 C 34 50 45 47 50 46 Z"
+            fill="url(#finderRightGrad)"
+          />
+
+          {/* Center Dividing Nose Line Profile */}
+          <path
+            d="M 50 0 L 50 46 C 45 47 34 50 34 56 C 34 61.5 45 63 48 64 L 50 100"
             stroke="#002456"
             strokeWidth="3.8"
             strokeLinecap="round"
@@ -70,13 +77,13 @@ export const MacFinderIcon: React.FC<{ className?: string }> = ({ className = 'w
           />
 
           {/* Left Eye */}
-          <ellipse cx="32" cy="39" rx="3.6" ry="5.6" fill="#002456" />
+          <ellipse cx="33" cy="38" rx="3.6" ry="5.8" fill="#002456" />
           {/* Right Eye */}
-          <ellipse cx="68" cy="39" rx="3.6" ry="5.6" fill="#002456" />
+          <ellipse cx="67" cy="38" rx="3.6" ry="5.8" fill="#002456" />
 
           {/* Warm Authentic Finder Smile */}
           <path
-            d="M 23 63.5 C 34 80.5 66 80.5 77 63.5"
+            d="M 24 64 C 35 80 65 80 76 64"
             stroke="#002456"
             strokeWidth="4.2"
             strokeLinecap="round"
@@ -84,8 +91,8 @@ export const MacFinderIcon: React.FC<{ className?: string }> = ({ className = 'w
           />
 
           {/* Smile Dimples at Cheeks */}
-          <path d="M 21 61.5 C 22.5 58 25 59.5 25.5 62.5" stroke="#002456" strokeWidth="2.8" strokeLinecap="round" />
-          <path d="M 79 61.5 C 77.5 58 75 59.5 74.5 62.5" stroke="#002456" strokeWidth="2.8" strokeLinecap="round" />
+          <path d="M 20.5 61.5 C 22 59 24.5 60.5 25 63" stroke="#002456" strokeWidth="2.8" strokeLinecap="round" />
+          <path d="M 79.5 61.5 C 78 59 75.5 60.5 75 63" stroke="#002456" strokeWidth="2.8" strokeLinecap="round" />
 
           {/* Top 3D Specular Highlight */}
           <path
@@ -106,25 +113,33 @@ export const MacFinderIcon: React.FC<{ className?: string }> = ({ className = 'w
 // 2. Authentic macOS Safari Compass Icon
 // ==========================================
 export const MacSafariIcon: React.FC<{ className?: string }> = ({ className = 'w-full h-full' }) => {
+  const ticks = Array.from({ length: 72 }, (_, i) => i * 5);
+
   return (
     <div className={`relative ${className}`}>
       <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible" fill="none">
         <defs>
           <linearGradient id="safariBase" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
             <stop stopColor="#FFFFFF" />
-            <stop offset="1" stopColor="#E5E7EB" />
+            <stop offset="0.6" stopColor="#F8FAFC" />
+            <stop offset="1" stopColor="#E2E8F0" />
           </linearGradient>
-          <linearGradient id="safariDial" x1="50" y1="12" x2="50" y2="88" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#25A5F5" />
-            <stop offset="1" stopColor="#0B6CD9" />
-          </linearGradient>
-          <linearGradient id="needleRed" x1="50" y1="20" x2="68" y2="38" gradientUnits="userSpaceOnUse">
+          <radialGradient id="safariDial" cx="50" cy="50" r="38" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#25ACFE" />
+            <stop offset="60%" stopColor="#007CF8" />
+            <stop offset="100%" stopColor="#004EC2" />
+          </radialGradient>
+          <linearGradient id="needleRedLight" x1="0" y1="0" x2="1" y2="1">
             <stop stopColor="#FF453A" />
-            <stop offset="1" stopColor="#D70015" />
+            <stop offset="1" stopColor="#FF2D55" />
           </linearGradient>
-          <linearGradient id="needleWhite" x1="50" y1="80" x2="32" y2="62" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#FFFFFF" />
-            <stop offset="1" stopColor="#CBD5E1" />
+          <linearGradient id="needleRedDark" x1="0" y1="0" x2="1" y2="1">
+            <stop stopColor="#D70015" />
+            <stop offset="1" stopColor="#A80010" />
+          </linearGradient>
+          <linearGradient id="needleWhiteDark" x1="0" y1="0" x2="1" y2="1">
+            <stop stopColor="#E2E8F0" />
+            <stop offset="1" stopColor="#94A3B8" />
           </linearGradient>
           <clipPath id="safariSquircle">
             <rect width="100" height="100" rx="22.5" />
@@ -134,41 +149,61 @@ export const MacSafariIcon: React.FC<{ className?: string }> = ({ className = 'w
         <g clipPath="url(#safariSquircle)">
           <rect width="100" height="100" fill="url(#safariBase)" />
 
-          {/* Compass Dial Bezel */}
+          {/* Inner Circular Bezel with Drop Shadow */}
+          <circle cx="50" cy="50" r="38.5" fill="#CBD5E1" opacity="0.5" />
           <circle cx="50" cy="50" r="38" fill="url(#safariDial)" />
-          <circle cx="50" cy="50" r="37.5" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
+          <circle cx="50" cy="50" r="37.5" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
 
-          {/* Compass Dial Ticks */}
-          <g stroke="rgba(255,255,255,0.6)" strokeWidth="1.2" strokeLinecap="round">
-            {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => (
-              <line
-                key={deg}
-                x1="50"
-                y1="14"
-                x2="50"
-                y2={deg % 90 === 0 ? '20' : '17'}
-                transform={`rotate(${deg} 50 50)`}
-                stroke={deg % 90 === 0 ? 'white' : 'rgba(255,255,255,0.7)'}
-                strokeWidth={deg % 90 === 0 ? '2' : '1.2'}
-              />
-            ))}
+          {/* 72 Compass Degree Ticks */}
+          <g strokeLinecap="round">
+            {ticks.map((deg) => {
+              const isMajor = deg % 30 === 0;
+              const isMedium = !isMajor && deg % 15 === 0;
+              const y2 = isMajor ? 18.5 : isMedium ? 16.5 : 15;
+              const strokeColor = isMajor ? '#FFFFFF' : isMedium ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.55)';
+              const strokeWidth = isMajor ? 1.6 : isMedium ? 1.1 : 0.8;
+
+              return (
+                <line
+                  key={deg}
+                  x1="50"
+                  y1="12.5"
+                  x2="50"
+                  y2={y2}
+                  transform={`rotate(${deg} 50 50)`}
+                  stroke={strokeColor}
+                  strokeWidth={strokeWidth}
+                />
+              );
+            })}
           </g>
 
-          {/* Compass Needle (rotated 45deg to North-East) */}
-          <g transform="rotate(45 50 50)" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))">
-            {/* North Red Needle */}
-            <polygon points="50,16 57,50 50,47 43,50" fill="url(#needleRed)" />
-            {/* South White Needle */}
-            <polygon points="50,84 57,50 50,53 43,50" fill="url(#needleWhite)" />
-            {/* Center Brass Pivot */}
-            <circle cx="50" cy="50" r="4.5" fill="#FFFFFF" stroke="#0B6CD9" strokeWidth="1.5" />
-            <circle cx="50" cy="50" r="1.5" fill="#D70015" />
+          {/* 3D Faceted Compass Needle pointing North-East (rotated 45deg) */}
+          <g transform="rotate(45 50 50)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.4))">
+            {/* North Half (Red) */}
+            <polygon points="50,14 43,50 50,47" fill="url(#needleRedLight)" />
+            <polygon points="50,14 57,50 50,47" fill="url(#needleRedDark)" />
+
+            {/* South Half (White/Silver) */}
+            <polygon points="50,86 43,50 50,53" fill="url(#needleWhiteDark)" />
+            <polygon points="50,86 57,50 50,53" fill="#FFFFFF" />
+
+            {/* Center Metallic Pivot */}
+            <circle cx="50" cy="50" r="4.8" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="0.8" />
+            <circle cx="50" cy="50" r="2.2" fill="#E11D48" />
           </g>
 
-          {/* Specular curved reflection */}
-          <path d="M 0 0 L 100 0 L 100 36 C 70 46 30 46 0 36 Z" fill="white" fillOpacity="0.22" />
+          {/* Top Specular Arc Highlight */}
+          <path
+            d="M 12 50 A 38 38 0 0 1 88 50 C 70 56 30 56 12 50 Z"
+            fill="white"
+            fillOpacity="0.18"
+          />
+          <path d="M 0 0 L 100 0 L 100 36 C 70 46 30 46 0 36 Z" fill="white" fillOpacity="0.18" />
         </g>
-        <rect x="0.5" y="0.5" width="99" height="99" rx="22" stroke="rgba(0,0,0,0.1)" strokeWidth="1" />
+
+        {/* Outer Inset Bezel Rim */}
+        <rect x="0.5" y="0.5" width="99" height="99" rx="22" stroke="rgba(0,0,0,0.12)" strokeWidth="1" />
       </svg>
     </div>
   );
