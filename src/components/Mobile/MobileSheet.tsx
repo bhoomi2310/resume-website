@@ -36,7 +36,7 @@ export const MobileSheet: React.FC<MobileSheetProps> = ({
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-            className="relative w-full h-[92vh] mac-glass rounded-t-3xl flex flex-col overflow-hidden shadow-2xl border-t border-[#C9B3F5]/40"
+            className="relative w-full h-[92dvh] max-w-2xl mx-auto mac-glass rounded-t-3xl flex flex-col overflow-hidden shadow-2xl border-t border-[#C9B3F5]/40"
           >
             {/* Top Sheet Drag/Header Bar */}
             <div className="pt-3 pb-2 px-5 flex flex-col items-center border-b border-[#C9B3F5]/30 dark:border-[#9B6DFF]/20 bg-white/40 dark:bg-[#1E1030]/60 flex-shrink-0">

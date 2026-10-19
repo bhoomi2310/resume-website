@@ -164,11 +164,17 @@ export default function App() {
   // Responsive check
   useEffect(() => {
     const checkViewport = () => {
-      setIsMobile(window.innerWidth < 768);
+      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      // Mobile portrait (<768px wide) OR mobile landscape (touch device with short screen height <= 520px)
+      setIsMobile(window.innerWidth < 768 || (isTouch && window.innerHeight <= 520));
     };
     checkViewport();
     window.addEventListener('resize', checkViewport);
-    return () => window.removeEventListener('resize', checkViewport);
+    window.addEventListener('orientationchange', checkViewport);
+    return () => {
+      window.removeEventListener('resize', checkViewport);
+      window.removeEventListener('orientationchange', checkViewport);
+    };
   }, []);
 
   // Theme synchronization with html element
@@ -316,7 +322,7 @@ export default function App() {
 
   return (
     <div
-      className={`relative w-screen h-screen overflow-hidden ${
+      className={`relative w-full h-[100dvh] min-h-[100dvh] overflow-hidden ${
         isDark ? 'wallpaper-dark text-slate-100' : 'wallpaper-light text-slate-800'
       } transition-colors duration-500`}
     >
