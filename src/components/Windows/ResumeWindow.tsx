@@ -44,6 +44,7 @@ export const ResumeWindow: React.FC = () => {
       {/* PDF Viewer Frame */}
       <div className="flex-1 w-full h-[calc(100%-48px)] bg-neutral-900/10 dark:bg-black/40 relative">
         <object
+          key={profileData.resumePdfUrl}
           data={`${profileData.resumePdfUrl}#view=FitH`}
           type="application/pdf"
           className="w-full h-full min-h-[500px]"

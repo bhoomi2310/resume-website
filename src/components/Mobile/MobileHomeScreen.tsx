@@ -21,7 +21,6 @@ import {
   MacMailIcon,
   MacPreviewIcon,
   MacSquircle,
-  MacPhotoFileIcon,
 } from '../Desktop/MacIcons';
 
 interface MobileHomeScreenProps {
@@ -40,36 +39,58 @@ interface AppIconConfig {
 }
 
 const MobileGithubIcon: React.FC<{ className?: string }> = ({ className = 'w-full h-full' }) => (
-  <div className={className}>
-    <MacSquircle gradient="from-[#2D333B] to-[#1C2128]">
-      <FaGithub className="w-[58%] h-[58%] text-white" />
+  <div className={`w-full h-full ${className}`}>
+    <MacSquircle gradient="from-[#24292F] to-[#0D1117]">
+      <FaGithub className="w-[58%] h-[58%] text-white drop-shadow-xs" />
     </MacSquircle>
   </div>
 );
 
 const MobileLinkedinIcon: React.FC<{ className?: string }> = ({ className = 'w-full h-full' }) => (
-  <div className={className}>
+  <div className={`w-full h-full ${className}`}>
     <MacSquircle gradient="from-[#0A66C2] to-[#004182]">
-      <FaLinkedin className="w-[58%] h-[58%] text-white" />
+      <FaLinkedin className="w-[58%] h-[58%] text-white drop-shadow-xs" />
+    </MacSquircle>
+  </div>
+);
+
+const MobileContactsIcon: React.FC<{ className?: string }> = ({ className = 'w-full h-full' }) => (
+  <div className={`w-full h-full ${className}`}>
+    <MacSquircle gradient="from-[#78716C] via-[#57534E] to-[#292524]">
+      {/* Authentic macOS / iOS Address Book / Contacts design */}
+      <div className="w-full h-full relative flex items-center justify-center">
+        {/* Right side tab markers */}
+        <div className="absolute right-1 top-2 bottom-2 w-1 flex flex-col justify-between py-1 opacity-80">
+          <span className="w-full h-1 rounded-full bg-rose-400" />
+          <span className="w-full h-1 rounded-full bg-amber-400" />
+          <span className="w-full h-1 rounded-full bg-emerald-400" />
+          <span className="w-full h-1 rounded-full bg-sky-400" />
+        </div>
+        {/* Contact silhouette */}
+        <div className="flex flex-col items-center justify-center -translate-x-0.5">
+          <div className="w-3.5 h-3.5 rounded-full bg-stone-100 shadow-xs mb-0.5" />
+          <div className="w-6 h-3 rounded-t-full bg-stone-100 shadow-xs" />
+        </div>
+      </div>
     </MacSquircle>
   </div>
 );
 
 const MobilePhotoIcon: React.FC<{ className?: string }> = ({ className = 'w-full h-full' }) => (
-  <div className={className}>
+  <div className={`w-full h-full ${className}`}>
     <MacSquircle gradient="from-[#FFFFFF] to-[#F1F5F9]">
-      <div className="w-[82%] h-[82%] rounded-xl overflow-hidden bg-gradient-to-b from-sky-400 via-rose-300 to-amber-200 relative flex flex-col justify-between shadow-xs border border-black/10">
+      <div className="w-[82%] h-[82%] rounded-[20%] overflow-hidden bg-gradient-to-b from-sky-400 via-rose-300 to-amber-200 relative flex flex-col justify-between shadow-xs border border-black/10">
         {/* Sun */}
-        <div className="absolute top-1.5 right-2 w-3.5 h-3.5 rounded-full bg-amber-100/90 shadow-xs" />
+        <div className="absolute top-1 right-1.5 w-2.5 h-2.5 rounded-full bg-amber-100/90 shadow-xs" />
         {/* Scenic Mountains */}
         <div className="w-full h-full flex items-end">
-          <svg viewBox="0 0 50 28" className="w-full h-6 fill-indigo-800/85">
+          <svg viewBox="0 0 50 28" className="w-full h-5 fill-indigo-800/85">
             <polygon points="0,28 14,10 28,28" />
             <polygon points="18,28 34,6 50,28" fill="#3730A3" />
           </svg>
         </div>
         {/* JPG Badge at bottom right */}
-        <span className="absolute bottom-0.5 right-1 text-[7px] font-extrabold text-white/95 drop-shadow-sm tracking-tight">
+        <span className="absolute bottom-0.5 right-1 text-[6.5px] font-extrabold text-white/95 drop-shadow-xs tracking-tight">
           JPG
         </span>
       </div>
@@ -152,7 +173,7 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
     {
       id: 'contact',
       label: 'Contact',
-      icon: MacMailIcon,
+      icon: MobileContactsIcon,
     },
     {
       id: 'photo',
@@ -184,7 +205,7 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
   };
 
   return (
-    <div className="w-full h-full min-h-[100dvh] flex flex-col justify-start px-3 pt-1 pb-28 sm:pb-32 overflow-y-auto overscroll-contain select-none">
+    <div className="w-full h-full min-h-[100dvh] flex flex-col justify-start px-3 pt-1 pb-24 sm:pb-32 overflow-y-auto overscroll-contain select-none">
       {/* Top Mobile Status Bar */}
       <div className="flex items-center justify-between text-xs font-semibold px-2 py-1 text-slate-800 dark:text-slate-100 select-none flex-shrink-0">
         <span>{timeStr || '9:41 AM'}</span>
@@ -207,23 +228,20 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
       {/* Main Responsive Layout Wrapper (Stack on portrait, side-by-side on landscape) */}
       <div className="flex-1 flex flex-col landscape:flex-row landscape:items-center landscape:justify-center landscape:gap-6 landscape:py-2">
         {/* Hero Info Card */}
-        <div className="mt-1 mb-2.5 sm:mb-3.5 landscape:my-0 text-center landscape:text-left space-y-1 sm:space-y-1.5 flex-shrink-0 landscape:max-w-[210px]">
+        <div className="mt-1 mb-2 sm:mb-3.5 landscape:my-0 text-center landscape:text-left space-y-1 sm:space-y-1.5 flex-shrink-0 landscape:max-w-[210px]">
           <div className="relative inline-block">
             <img
               src="/profile.jpg"
               alt={profileData.name}
-              className="w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto object-cover border-2 border-white/80 dark:border-slate-800 shadow-md"
+              className="w-13 h-13 sm:w-16 sm:h-16 rounded-full mx-auto object-cover border-2 border-white/80 dark:border-slate-800 shadow-md"
             />
-            <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900" />
+            <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900" />
           </div>
 
           <div>
             <h1 className="text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
               {profileData.name}
             </h1>
-            <p className="text-xs font-semibold text-sky-600 dark:text-sky-400">
-              {profileData.title}
-            </p>
           </div>
 
           <p className="text-[11px] font-medium text-slate-600 dark:text-slate-400 max-w-[280px] mx-auto landscape:mx-0 leading-tight line-clamp-1 sm:line-clamp-none">
@@ -237,7 +255,7 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
         </div>
 
         {/* App Grid (4 cols in portrait, 7 cols in landscape) */}
-        <div className="grid grid-cols-4 landscape:grid-cols-7 gap-y-3.5 sm:gap-y-4 gap-x-2 sm:gap-x-3 max-w-sm landscape:max-w-xl mx-auto w-full pt-1 sm:pt-2">
+        <div className="grid grid-cols-4 landscape:grid-cols-7 gap-y-3 sm:gap-y-4 gap-x-1.5 sm:gap-x-3 max-w-[324px] sm:max-w-md landscape:max-w-xl mx-auto w-full pt-1">
           {apps.map((app) => {
             const Icon = app.icon;
             return (
@@ -246,18 +264,18 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
                 onClick={() => handleAppClick(app)}
                 className="flex flex-col items-center gap-1 group focus:outline-none"
               >
-                <div className="w-13 h-13 sm:w-14 sm:h-14 relative active:scale-90 transition-transform">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 relative active:scale-90 transition-transform flex-shrink-0">
                   {app.badge && (
-                    <span className="absolute -top-1 -right-1 px-1.5 py-0.2 bg-red-500 text-white text-[8px] font-bold rounded-full border border-white z-10 shadow-sm">
+                    <span className="absolute -top-1 -right-1 px-1.5 py-0.2 bg-red-500 text-white text-[8px] font-bold rounded-full border border-white z-10 shadow-xs">
                       {app.badge}
                     </span>
                   )}
-                  <div className="w-full h-full drop-shadow-[0_3px_6px_rgba(0,0,0,0.22)]">
+                  <div className="w-full h-full drop-shadow-[0_2px_5px_rgba(0,0,0,0.22)]">
                     <Icon className="w-full h-full" />
                   </div>
                 </div>
 
-                <span className="text-[10px] sm:text-[11px] font-medium text-slate-900 dark:text-slate-100 text-center leading-tight max-w-[76px] sm:max-w-[80px] px-0.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
+                <span className="text-[10px] sm:text-[11px] font-medium text-slate-900 dark:text-slate-100 text-center leading-tight max-w-[68px] sm:max-w-[76px] px-0.5 drop-shadow-[0_1px_1px_rgba(0,0,0,0.4)]">
                   {app.label}
                 </span>
               </button>
@@ -271,14 +289,14 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
         <div className="mac-dock-glass p-2 sm:p-2.5 rounded-2xl sm:rounded-3xl flex items-center justify-around shadow-2xl border border-white/30 dark:border-white/10">
           <button
             onClick={() => onOpenApp('about')}
-            className="w-11 h-11 sm:w-12 sm:h-12 active:scale-90 transition-transform drop-shadow-md"
+            className="w-10 h-10 sm:w-11 sm:h-11 active:scale-90 transition-transform drop-shadow-md"
             aria-label="About Me"
           >
             <MacFinderIcon className="w-full h-full" />
           </button>
           <button
             onClick={() => onOpenApp('projects')}
-            className="w-11 h-11 sm:w-12 sm:h-12 active:scale-90 transition-transform drop-shadow-md relative"
+            className="w-10 h-10 sm:w-11 sm:h-11 active:scale-90 transition-transform drop-shadow-md relative"
             aria-label="Projects"
           >
             <MacSafariIcon className="w-full h-full" />
@@ -288,7 +306,7 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
           </button>
           <button
             onClick={() => onOpenApp('chat')}
-            className="w-11 h-11 sm:w-12 sm:h-12 active:scale-90 transition-transform drop-shadow-md relative"
+            className="w-10 h-10 sm:w-11 sm:h-11 active:scale-90 transition-transform drop-shadow-md relative"
             aria-label="Ask AI"
           >
             <MacMessagesIcon className="w-full h-full" />
@@ -298,7 +316,7 @@ export const MobileHomeScreen: React.FC<MobileHomeScreenProps> = ({
           </button>
           <button
             onClick={() => onOpenApp('mail')}
-            className="w-11 h-11 sm:w-12 sm:h-12 active:scale-90 transition-transform drop-shadow-md"
+            className="w-10 h-10 sm:w-11 sm:h-11 active:scale-90 transition-transform drop-shadow-md"
             aria-label="Mail"
           >
             <MacMailIcon className="w-full h-full" />

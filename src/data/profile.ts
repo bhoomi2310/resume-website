@@ -33,5 +33,5 @@ export const profileData: Profile = {
   github: "https://github.com/bhoomi2310",
   linkedin: "https://www.linkedin.com/in/bhoomi23/",
   photoUrl: "/profile.jpg",
-  resumePdfUrl: "/Bhoomi_Gupta_Resume.pdf",
+  resumePdfUrl: "/Bhoomi_Gupta_Resume_Latest.pdf",
 };
